@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- ДЗ часть 2 : Реализовать калькулятор.
+При помощи prompt пользователь вводить два числа и оператор (/, *, % , +, -).
+Дальше делаем конструкцию if else или switch. В которой в зависимости от оператора
+выполняем дейтвие и выводим пользователю при помощи alert(result);-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple calculator</title>
+    <script type="text/javascript">
+        var a;//первое число
+        var b;//второе число
+        var oper;//операция
+        var res=null;//результат
+
+        //проверяем, что ввели действительно число
+        while ( !(!isNaN(parseFloat(a)) && isFinite(parseFloat(a)))) {
+            a = +prompt("Введите первое число:");
+        }
+
+        while ( !(!isNaN(parseFloat(b)) && isFinite(parseFloat(b)))) {
+            b = +prompt("Введите второе число:");
+        }
+
+       oper=prompt("Введите одно из действий: /, *, % , +, -");
+
+        switch (oper){
+            case "/":{
+                if (b!=0){
+                    res=a/b;
+                    alert("Результат: "+res);
+                }
+                else
+                    alert("Деление на 0 не возможно");
+            };
+            break;
+
+            case "*":{
+                res=a*b;
+                alert("Результат: "+res);
+            };
+            break;
+
+            case "%":{
+                if (b!=0) {
+                    res = a % b;
+                    alert("Результат: "+res);
+                }
+                else
+                    alert("Деление на 0 не возможно");
+            };
+            break;
+
+            case "+":{
+                res=a+b;
+                alert("Результат: "+res);
+            };
+            break;
+
+            case "-":{
+                res=a-b;
+                alert("Результат: "+res);
+            };
+            break;
+
+            default:
+            {
+                alert("Вы ввели неверный знак операции");
+            };
+        }
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
